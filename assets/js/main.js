@@ -5,8 +5,8 @@ function test() {
 function getWeatherData() {
 
   //TODO:本番用と切り替える
-  //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
-  const API_URL = "http://localhost:9000/.netlify/functions/getweather";
+  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/getweather";
+  //const API_URL = "http://localhost:9000/.netlify/functions/getweather";
 
 
   fetch(API_URL, {
@@ -50,8 +50,8 @@ function getWeatherData() {
 async function getAmedasData() {
 
   //TODO:本番用と切り替える
-  //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
-  const API_URL = "http://localhost:9000/.netlify/functions/getamedasdata";
+  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/getamedasdata";
+  //const API_URL = "http://localhost:9000/.netlify/functions/getamedasdata";
 
   await fetch(API_URL, {
     method: "GET",
@@ -105,8 +105,8 @@ async function getAmedasData() {
 
 function sendSlack(){
    //TODO:本番用と切り替える
-  //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
-  const API_URL = "http://localhost:9000/.netlify/functions/SlackNotice";
+   const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
+ // const API_URL = "http://localhost:9000/.netlify/functions/SlackNotice";
 
 
   var comment_area = document.getElementById("comment");
