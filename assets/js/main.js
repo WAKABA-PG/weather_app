@@ -5,7 +5,7 @@ function test() {
 function getWeatherData() {
 
   //TODO:本番用と切り替える
-  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/getweather";
+  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/GetWeather";
   //const API_URL = "http://localhost:9000/.netlify/functions/getweather";
 
 
@@ -50,7 +50,7 @@ function getWeatherData() {
 async function getAmedasData() {
 
   //TODO:本番用と切り替える
-  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/getamedasdata";
+  const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/GetAmedasData";
   //const API_URL = "http://localhost:9000/.netlify/functions/getamedasdata";
 
   await fetch(API_URL, {
