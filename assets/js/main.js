@@ -8,16 +8,9 @@ function getWeatherData() {
   //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
   const API_URL = "http://localhost:9000/.netlify/functions/getweather";
 
-  let body = {
-    name: "sample",
-  };
-
-  // バックエンドAPIへPOST
-  const payload = JSON.stringify(body);
 
   fetch(API_URL, {
-    method: "POST",
-    body: payload,
+    method: "GET",
   })
 
     .then((response) => {
@@ -60,16 +53,8 @@ async function getAmedasData() {
   //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
   const API_URL = "http://localhost:9000/.netlify/functions/getamedasdata";
 
-  let body = {
-    name: "sample",
-  };
-
-  // バックエンドAPIへPOST
-  const payload = JSON.stringify(body);
-
   await fetch(API_URL, {
-    method: "POST",
-    body: payload,
+    method: "GET",
   })
 
     .then((response) => {
@@ -116,6 +101,38 @@ async function getAmedasData() {
       alert("通信エラーが発生しました。再度送信ください。");
     });
 
+}
+
+function sendSlack(){
+   //TODO:本番用と切り替える
+  //const API_URL = "https://cool-torrone-de9fa2.netlify.app/.netlify/functions/sendMailsWithSlack";
+  const API_URL = "http://localhost:9000/.netlify/functions/SlackNotice";
+
+
+  var comment_area = document.getElementById("comment");
+  var msg = comment_area.textContent;
+
+  //コメントをスラックに送信する
+  let body = {
+    msg: msg,
+  };
+
+  // バックエンドAPIへPOST
+  const payload = JSON.stringify(body);
+
+  fetch(API_URL, {
+    method: "POST",
+    body: payload,
+  })
+
+    .then((response) => {
+      alert("Slackへ送信しました")
+    })
+    
+    .catch(error => {
+      console.log(error);
+      alert("通信エラーが発生しました。再度送信ください。");
+    });
 }
 
 function getWeatherIconURL(weather_code) {
